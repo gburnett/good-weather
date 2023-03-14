@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  
+  overflow-x: hidden;
+}
