@@ -1,24 +1,57 @@
 /**
 * Colors
 */
+$white: #FFFFFF;
+$black: #000000;
+$mineShaft: #1F1F1F;
+$gallery: #EBEBEB;
 
 
 
 /**
 * Fonts
 */
+$font-path: "assets/fonts";
+$font-family-default: "Arial", "Helvetica", sans-serif;
+$font-family-inter: "Inter";
+$font-family: $font-family-inter, $font-family-default;
 
+$font-size-base: 16px;
+
+$font-size-14: 14px; 
+$font-size-16: 16px; 
+$font-size-18: 18px; 
+$font-size-38: 38px; 
+
+$line-height-20: 20px;
+$line-height-22: 22px;
+$line-height-24: 24px;
+$line-height-33: 32px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
 
 /**
 * Breakpoints 
 */
+$screen-mobile: '(max-width: 768px)';
+$screen-tablet: '(max-width: 1366px)';
 
 
 
 /**
 * Layout
 */
+$container-width: 1230px;
+$container-horizontal-padding: 20px;
+
+$gap-10: 10px;
+$gap-15: 15px;
+$gap-20: 20px;
+$gap-30: 30px;
+$gap-40: 40px;
 
 
 
