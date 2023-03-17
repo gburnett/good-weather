@@ -1,0 +1,31 @@
+.header {
+  background-color: $mineShaft;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: rem($gap-20);
+
+    padding-block: rem($gap-20);
+  }
+
+  &__logo {
+    &-caption {
+      font-family: $font-family-alata;
+      font-size: rem($font-size-38);
+      line-height: rem($line-height-33);
+
+      margin: 0;
+  
+      color: $white;
+    }
+  }
+
+  &__search {
+    @media #{$screen-mobile} {
+      flex-basis: 100%;
+    }
+  }
+}
