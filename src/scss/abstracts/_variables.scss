@@ -14,7 +14,9 @@ $gallery: #EBEBEB;
 $font-path: "assets/fonts";
 $font-family-default: "Arial", "Helvetica", sans-serif;
 $font-family-inter: "Inter";
+$font-family-alata: "Alata";
 $font-family: $font-family-inter, $font-family-default;
+$font-family-logo: $font-family-alata, $font-family-default;
 
 $font-size-base: 16px;
 
