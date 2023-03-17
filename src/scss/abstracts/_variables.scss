@@ -23,6 +23,8 @@ $font-size-base: 16px;
 $font-size-14: 14px; 
 $font-size-16: 16px; 
 $font-size-18: 18px; 
+$font-size-20: 20px; 
+$font-size-24: 24px; 
 $font-size-38: 38px; 
 
 $line-height-20: 20px;
@@ -66,13 +68,15 @@ $gap-40: 40px;
 /**
 * Transitions and Animations
 */
-
+$transition-type-default: ease-in-out;
+$transition-time-default: .2s;
+$transition-default: $transition-time-default $transition-type-default;
 
 
 /**
 * Borders
 */
-
+$border-default: 2px solid $gallery;
 
 
 /**
