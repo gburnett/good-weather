@@ -18,15 +18,20 @@
 /**
 * Components
 */
+@import 'components/container';
+@import 'components/header';
+@import 'components/searchbar';
+@import 'components/weather-card';
 
 
 
 /**
 * Views
 */
-
+@import 'views/page.scss';
 
 
 /**
 * Pages
 */
+@import 'pages/main-page';
