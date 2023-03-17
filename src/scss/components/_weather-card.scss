@@ -1,0 +1,151 @@
+.weather-card {
+  max-width: rem(600px);
+
+  border-radius: rem(15px);
+  box-shadow: $box-shadow-default;
+
+  background-color: $white;
+
+  &__wrapper {
+    padding: rem($gap-20);
+  }
+
+  &__header {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: rem($gap-20);
+    }
+  }
+
+  &__date {
+    font-size: rem($font-size-18);
+    font-weight: $font-weight-bold;
+
+    margin: 0;
+  }
+
+  &__location {
+    font-size: rem($font-size-24);
+    font-weight: $font-weight-bold;
+
+    margin: 0;
+  }
+
+  &__current-status {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-data {
+      display: flex;
+      flex-direction: column;
+      gap: rem($gap-10);
+    }
+
+    &-temperature {
+      font-size: rem($font-size-24);
+      font-weight: $font-weight-bold;
+
+      margin-left: auto;
+    }
+
+    &-caption {
+      font-size: rem($font-size-20);
+    }
+
+    &-icon{
+      &-svg {
+        $icon-size: 100px;
+
+        width: rem($icon-size);
+        height: rem($icon-size);
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: rem($gap-20);
+
+    @media #{$screen-mobile} {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__col {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding-block: rem($gap-10);
+
+    border-bottom: $border-default;
+
+    &-title {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__forecast {
+    &--active & {
+      &-body {
+        margin-top: rem($gap-40);
+      }
+
+      &-header {
+        &-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-header {
+      font-weight: $font-weight-bold;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: rem(5px);
+
+      margin-top: rem($gap-20);
+      padding-block: rem($gap-10);
+
+      cursor: pointer;
+
+      &-icon {
+        $icon-size: 20px;
+
+        width: rem($icon-size);
+        height: rem($icon-size);
+
+        transition: transform $transition-default;
+      }
+    }
+
+    &-body {
+      overflow: hidden;
+
+      max-height: 0;
+    }
+
+    &-table {
+      width: 100%;
+
+      text-align: center;
+
+      border-spacing: 0;
+
+
+      &-col {
+        padding-block: rem($gap-10);
+
+        border-bottom: $border-default;
+      }
+    }
+  }
+}
