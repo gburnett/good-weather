@@ -1,0 +1,9 @@
+.searchbar {
+  &__input {
+    padding-block: rem($gap-10);
+
+    @media #{$screen-mobile} {
+      width: 100%;
+    }
+  }
+}
