@@ -1,14 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App 2</title>
 </head>
-<body class="page">
 
+<body class="page main-page">
+
+  <header class="page__header header">
+    <div class="header__wrapper container">
+      <div class="header__logo">
+        <p class="header__logo-caption">GoodWeather</p>
+      </div>
+      <form class="header__search searchbar">
+        <label class="searchbar__label">
+          <input type="text" class="searchbar__input" placeholder="Enter a city ...">
+        </label>
+      </form>
+    </div>
+  </header>
+
+  <main class="page__main main-page__content">
+
+    <div class="main-page__content-wrapper container">
+      <div class="weather-card">
+        <div class="weather-card__wrapper">
+          <div class="weather-card__header">
+            <div class="weather-card__header-wrapper">
+              <p class="weather-card__date">
+                13.02.12
+              </p>
+              <p class="weather-card__location">
+                Moscow, Russia
+              </p>
+            </div>
+          </div>
+          <div class="weather-card__current">
+            <div class="weather-card__current-wrapper">
+              <div class="weather-card__current-status">
+                <div class="weather-card__current-status-wrapper">
+                  <div class="weather-card__current-status-icon">
+                    <svg class="weather-card__current-status-icon-svg">
+                      <use xlink:href="./src/assets/icons/sprite.svg#icon-snow"></use>
+                    </svg>
+                  </div>
+                  <div class="weather-card__current-status-data">
+                    <div class="weather-card__current-status-temperature">
+                      20
+                    </div>
+                    <div class="weahter-card__current-status-caption">
+                      Mostly cloudy
+                    </div>
+                  </div>
+                </div>
+              </div>
+         
+              <div class="weather-card__row">
+                <div class="weather-card__col">
+                  <span class="weather-card__col-title">Real Feel</span>
+                  <span data-real-feel>10</span>
+                </div>
+                <div class="weather-card__col">
+                  <span class="weather-card__col-title">Wind</span>
+                  <span data-wind>10 N/NW</span>
+                </div>
+              </div>
+              <div class="weather-card__row">
+                <div class="weather-card__col">
+                  <span class="weather-card__col-title">Pressure</span>
+                  <span data-pressure>1000 hPa</span>
+                </div>
+                <div class="weather-card__col">
+                  <span class="weather-card__col-title">Humidity</span>
+                  <span data-humidity>90%</span>
+                </div>
+              </div>
+            </div>
+            <div class="weather-card__row">
+              <div class="weather-card__col">
+                <span class="weather-card__col-title">Sunsire</span>
+                <span data-sunrise>06:30</span>
+              </div>
+              <div class="weather-card__col" data-pressure>
+                <span class="weather-card__col-title">Sunset</span>
+                <span data-sunset>18:30</span>
+              </div>
+            </div>
+            <div class="weather-card__forecast">
+              <div class="weather-card__forecast-body">
+                <div class="weather-card__forecast-body-wrapper">
+                  <table class="weather-card__forecast-table">
+                    <thead class="weather-card__forecast-table-head">
+                      <tr class="weather-card__forecast-table-header-row">
+                        <th class="weather-card__forecast-table-header-col">
+                          Hour
+                        </th>
+                        <th class="weather-card__forecast-table-header-col">
+                          Temperature
+                        </th>
+                        <th class="weather-card__forecast-table-header-col">
+                          Weather
+                        </th>
+                      </tr>
+                      <tr class="weather-card__forecast-table-row">
+                        <td class="weather-card__forecast-table-col">5:00</td>
+                        <td class="weather-card__forecast-table-col">10deg</td>
+                        <td class="weather-card__forecast-table-col">Cloudy</td>
+                      </tr>
+                      <tr class="weather-card__forecast-table-row">
+                        <td class="weather-card__forecast-table-col">5:00</td>
+                        <td class="weather-card__forecast-table-col">10deg</td>
+                        <td class="weather-card__forecast-table-col">Cloudy</td>
+                      </tr>
+                      <tr class="weather-card__forecast-table-row">
+                        <td class="weather-card__forecast-table-col">5:00</td>
+                        <td class="weather-card__forecast-table-col">10deg</td>
+                        <td class="weather-card__forecast-table-col">Cloudy</td>
+                      </tr>
+                    </thead>
+                    <tbody class="forecast__table-body"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="weather-card__forecast-header">
+                <span>Show forecast</span>
+                <svg class="weather-card__forecast-header-icon">
+                  <use xlink:href="./src/assets/icons/sprite.svg#icon-arrow-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </main>
 
   <script type="module" src="./src/js/main.ts"></script>
 </body>
+
 </html>
