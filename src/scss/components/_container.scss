@@ -1,0 +1,5 @@
+.container {
+  max-width: rem(calc($container-width + $container-horizontal-padding * 2));
+  margin: 0 auto;
+  padding-inline: rem($container-horizontal-padding);
+}
