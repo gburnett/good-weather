@@ -3,3 +3,9 @@
   font-family: $font-family-inter;
   src: url("#{$font-path}/#{$font-name}.ttf");
 }
+
+@font-face {
+  $font-name: "Alata-Regular";
+  font-family: $font-family-alata;
+  src: url("#{$font-path}/#{$font-name}.ttf");
+}
