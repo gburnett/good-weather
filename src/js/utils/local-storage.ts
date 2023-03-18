@@ -1,4 +1,4 @@
-import { Location } from '../types/interfaces';
+import { Location } from '../types/types';
 
 function checkLocalStorage(): boolean {
   if (!localStorage.getItem('city') && !localStorage.getItem('country')) {
