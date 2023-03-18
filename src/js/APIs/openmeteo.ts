@@ -1,4 +1,4 @@
-import { OpenmeteoResponse } from '../types/interfaces';
+import { OpenmeteoResponse } from '../types/types';
 
 export default async function (
   lat: number,
