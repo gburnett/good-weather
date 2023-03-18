@@ -24,10 +24,13 @@ interface CountryList {
   [key: string]: string;
 }
 
+type DateTimeType = 'short' | 'long';
+
 export {
   Location,
   NominatimResponse,
   OpenmeteoResponse,
   WorldtimeResponse,
-  CountryList
+  CountryList,
+  DateTimeType
 };
