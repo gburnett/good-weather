@@ -1,4 +1,9 @@
-export default async function (lat: number, lng: number): Promise<any> {
+import { OpenmeteoResponse } from '../types/interfaces';
+
+export default async function (
+  lat: number,
+  lng: number
+): Promise<OpenmeteoResponse> {
   const url: URL = new URL('https://api.open-meteo.com/v1/forecast');
   url.searchParams.set('latitude', lat.toString());
   url.searchParams.set('longitude', lng.toString());
