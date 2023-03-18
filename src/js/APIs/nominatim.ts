@@ -1,4 +1,4 @@
-import { NominatimResponse } from '../types/interfaces';
+import { NominatimResponse } from '../types/types';
 
 export default async function (
   city: string,
