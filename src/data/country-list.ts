@@ -1,4 +1,4 @@
-import { CountryList } from '@/js/types/interfaces';
+import { CountryList } from '@/js/types/types';
 
 export default <CountryList>{
   AF: 'Afghanistan',
