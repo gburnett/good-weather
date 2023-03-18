@@ -9,4 +9,11 @@ interface NominatimResponse {
   lon: string;
 }
 
-export { Location, NominatimResponse };
+interface OpenmeteoResponse {
+  current_weather: object;
+  daily: object;
+  hourly: object;
+  timezone: string;
+}
+
+export { Location, NominatimResponse, OpenmeteoResponse };
