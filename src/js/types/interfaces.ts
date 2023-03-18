@@ -20,4 +20,14 @@ interface WorldtimeResponse {
   datetime: string;
 }
 
-export { Location, NominatimResponse, OpenmeteoResponse, WorldtimeResponse };
+interface CountryList {
+  [key: string]: string;
+}
+
+export {
+  Location,
+  NominatimResponse,
+  OpenmeteoResponse,
+  WorldtimeResponse,
+  CountryList
+};
