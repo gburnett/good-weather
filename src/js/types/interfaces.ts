@@ -3,4 +3,10 @@ interface Location {
   country: string | null;
 }
 
-export { Location };
+interface NominatimResponse {
+  address: object;
+  lat: string;
+  lon: string;
+}
+
+export { Location, NominatimResponse };
