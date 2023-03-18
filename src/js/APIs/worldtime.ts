@@ -1,4 +1,6 @@
-export default async function (timezone: string): Promise<any> {
+import { WorldtimeResponse } from '../types/interfaces';
+
+export default async function (timezone: string): Promise<WorldtimeResponse> {
   const url = `https://worldtimeapi.org/api/timezone/${timezone}`;
 
   try {
