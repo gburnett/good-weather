@@ -1,7 +1,9 @@
-export default function getCurrentTime(
+import { DateTimeType } from '../types/types';
+
+export default function (
   time: string,
   timezone: string,
-  type: string
+  type: DateTimeType
 ): string {
   const date: number = Date.parse(time);
 
