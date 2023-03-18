@@ -2,7 +2,8 @@ export default async function (city: string, country: string): Promise<any> {
   const url: URL = new URL('https://nominatim.openstreetmap.org/search');
   url.searchParams.set('city', city);
   url.searchParams.set('country', country);
-  url.searchParams.set('format', 'json&addressdetails=1');
+  url.searchParams.set('format', 'json');
+  url.searchParams.set('addressdetails', '1');
   url.searchParams.set('limit', '1');
   url.searchParams.set('accept-languag', 'en-US');
 
