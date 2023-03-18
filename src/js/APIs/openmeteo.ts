@@ -6,10 +6,8 @@ export default async function (lat: number, lng: number): Promise<any> {
     'hourly',
     'temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,pressure_msl,windspeed_10m'
   );
-  url.searchParams.set(
-    'daily',
-    'weathercode,sunrise,sunset&current_weather=true'
-  );
+  url.searchParams.set('daily', 'weathercode,sunrise,sunset');
+  url.searchParams.set('current_weather', 'true');
   url.searchParams.set('timezone', 'auto');
 
   try {
