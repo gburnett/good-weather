@@ -1,4 +1,9 @@
-export default async function (city: string, country: string): Promise<any> {
+import { NominatimResponse } from '../types/interfaces';
+
+export default async function (
+  city: string,
+  country: string
+): Promise<NominatimResponse[]> {
   const url: URL = new URL('https://nominatim.openstreetmap.org/search');
   url.searchParams.set('city', city);
   url.searchParams.set('country', country);
