@@ -16,4 +16,8 @@ interface OpenmeteoResponse {
   timezone: string;
 }
 
-export { Location, NominatimResponse, OpenmeteoResponse };
+interface WorldtimeResponse {
+  datetime: string;
+}
+
+export { Location, NominatimResponse, OpenmeteoResponse, WorldtimeResponse };
