@@ -24,6 +24,15 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "assets/*": [
+        "./src/assets/*"
+      ],
+      "types/*": [
+        "./src/js/types/*"
+      ],
+      "utils/*": [
+        "./src/js/utils/*"
       ]
     }
   },
