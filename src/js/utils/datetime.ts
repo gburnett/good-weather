@@ -1,9 +1,9 @@
 import { DateTimeType } from '../types/types';
 
 export default function (
+  type: DateTimeType,
   time: string,
-  timezone: string,
-  type: DateTimeType
+  timezone?: string
 ): string {
   const date: number = Date.parse(time);
 
