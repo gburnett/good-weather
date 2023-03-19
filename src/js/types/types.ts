@@ -1,3 +1,7 @@
+interface AnyObject {
+  [key: string]: any;
+}
+
 interface Location {
   city: string | null;
   country: string | null;
@@ -10,9 +14,9 @@ interface NominatimResponse {
 }
 
 interface OpenmeteoResponse {
-  current_weather: object;
-  daily: object;
-  hourly: object;
+  current_weather: AnyObject;
+  daily: AnyObject;
+  hourly: AnyObject;
   timezone: string;
 }
 
