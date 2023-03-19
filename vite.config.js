@@ -7,7 +7,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      'assets': fileURLToPath(new URL('./src/assets', import.meta.url))
+      'assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
+      'types': fileURLToPath(new URL('./src/js/types', import.meta.url)),
+      'utils': fileURLToPath(new URL('./src/js/utils', import.meta.url)),
     }
   },
   css: {
