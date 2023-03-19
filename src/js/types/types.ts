@@ -25,7 +25,7 @@ interface WorldtimeResponse {
 }
 
 interface ElementsSelector {
-  [key: string]: Element;
+  [key: string]: HTMLElement | null;
 }
 
 interface CountryList {
