@@ -24,6 +24,10 @@ interface WorldtimeResponse {
   datetime: string;
 }
 
+interface ElementsSelector {
+  [key: string]: Element;
+}
+
 interface CountryList {
   [key: string]: string;
 }
@@ -36,5 +40,6 @@ export {
   OpenmeteoResponse,
   WorldtimeResponse,
   CountryList,
-  DateTimeType
+  DateTimeType,
+  ElementsSelector
 };
