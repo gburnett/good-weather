@@ -9,6 +9,7 @@ interface Location {
 
 interface NominatimResponse {
   address: object;
+  display_name: string;
   lat: string;
   lon: string;
 }
