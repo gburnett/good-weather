@@ -1,9 +1,51 @@
 .searchbar {
   &__input {
+    min-width: rem(320px);
+
     padding-block: rem($gap-10);
 
     @media #{$screen-mobile} {
       width: 100%;
+    }
+  }
+
+  &__results {
+    position: relative;
+
+    display: none;
+
+    &-list {
+      position: absolute;
+      top: 0;
+      right: 0;
+      
+      overflow-y: scroll;
+
+      max-height: rem(600px);
+      min-width: 100%;
+      margin: 0;
+      padding: rem($gap-20) 0;
+
+      list-style: none;
+
+      background-color: $white;
+      box-shadow: $box-shadow-default;
+
+    }
+
+    &-item {
+      padding: rem($gap-20);
+
+      cursor: pointer;
+
+      &:hover {
+        background: rgba($gallery, .5);
+      }
+    }
+
+    &-message {
+      margin: 0;
+      padding: rem($gap-10) rem($gap-20);
     }
   }
 }
