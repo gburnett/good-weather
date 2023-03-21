@@ -38,7 +38,6 @@ interface CountryList {
 interface LocalStorageData {
   city: string;
   country: string;
-  place_id: string;
   lat: string;
   lon: string;
 }
