@@ -26,7 +26,7 @@ export default function (data: OpenmeteoResponse): void {
     newTableRow.className = 'weather-card__forecast-table-row';
     newTableRow.innerHTML = `
       <td class="weather-card__forecast-table-col">
-        ${getTime('long', data.hourly.time[currentIndex! + step])}
+        ${getTime('short', data.hourly.time[currentIndex! + step])}
       </td>
       <td class="weather-card__forecast-table-col">
         ${data.hourly.temperature_2m[currentIndex! + step]}°C
