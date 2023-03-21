@@ -1,4 +1,4 @@
-import { Location } from 'types/types';
+import { LocalStorageData } from 'types/types';
 
 function checkLocalStorage(): boolean {
   if (!localStorage.getItem('city') && !localStorage.getItem('place_id')) {
@@ -7,21 +7,28 @@ function checkLocalStorage(): boolean {
   return true;
 }
 
-function saveLocation(city: string, placeId: string): void {
-  localStorage.setItem('city', city);
-  localStorage.setItem('place_id', placeId);
+function saveLocation(location: LocalStorageData): void {
+  localStorage.setItem('city', location.city);
+  localStorage.setItem('country', location.country);
+  localStorage.setItem('lon', location.lon);
+  localStorage.setItem('lat', location.lat);
 }
 
-function getSavedLocation(): Location {
+function getSavedLocation(): LocalStorageData {
   const localStorageExists: boolean = checkLocalStorage();
 
   if (!localStorageExists) {
     throw new Error('No location saved in local storage');
   }
 
-  const city: string | null = localStorage.getItem('city');
-  const placeId: string | null = localStorage.getItem('place_id');
-  return { city, placeId };
+  const storageData: LocalStorageData = {
+    city: localStorage.getItem('city')!,
+    country: localStorage.getItem('country')!,
+    lon: localStorage.getItem('lon')!,
+    lat: localStorage.getItem('lat')!
+  };
+
+  return storageData;
 }
 
 export { checkLocalStorage, saveLocation, getSavedLocation };
