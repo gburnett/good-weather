@@ -7,7 +7,9 @@ export default function (data: OpenmeteoResponse): void {
   const currentHour: string = data.current_weather.time;
   const forecastPoints: number = 8;
 
-  const table: Element | null = document.querySelector('[data-forecast-table]');
+  const tableBody: Element | null = document.querySelector(
+    '[data-forecast-table-body]'
+  );
 
   let step: number = 0;
   let currentIndex: number | null = null;
@@ -18,6 +20,11 @@ export default function (data: OpenmeteoResponse): void {
       currentIndex = index;
     }
   });
+
+  // Clear previous data if any
+  if (tableBody?.innerHTML) {
+    tableBody.innerHTML = '';
+  }
 
   for (let i = 0; i < forecastPoints; i++) {
     step += 2;
@@ -36,6 +43,6 @@ export default function (data: OpenmeteoResponse): void {
       </td>
     `;
 
-    table?.appendChild(newTableRow);
+    tableBody?.appendChild(newTableRow);
   }
 }
