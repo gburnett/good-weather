@@ -1,15 +1,15 @@
-import { Location } from '../types/types';
+import { Location } from 'types/types';
 
 function checkLocalStorage(): boolean {
-  if (!localStorage.getItem('city') && !localStorage.getItem('country')) {
+  if (!localStorage.getItem('city') && !localStorage.getItem('place_id')) {
     return false;
   }
   return true;
 }
 
-function saveLocation(city: string, country: string): void {
+function saveLocation(city: string, placeId: string): void {
   localStorage.setItem('city', city);
-  localStorage.setItem('country', country);
+  localStorage.setItem('place_id', placeId);
 }
 
 function getSavedLocation(): Location {
@@ -20,8 +20,8 @@ function getSavedLocation(): Location {
   }
 
   const city: string | null = localStorage.getItem('city');
-  const country: string | null = localStorage.getItem('country');
-  return { city, country };
+  const placeId: string | null = localStorage.getItem('place_id');
+  return { city, placeId };
 }
 
 export { checkLocalStorage, saveLocation, getSavedLocation };
