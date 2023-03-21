@@ -24,6 +24,6 @@ export default function (weatherStatus: string): string {
     case 'Snow showers':
       return 'snow';
     default:
-      return "ERROR: Can't load weather icon";
+      throw new Error("ERROR: Can't load weather icon");
   }
 }
