@@ -13,7 +13,7 @@ export default function (data: OpenmeteoResponse): void {
     pressure: document.querySelector('[data-pressure]'),
     humidity: document.querySelector('[data-humidity]'),
     sunrise: document.querySelector('[data-sunrise]'),
-    sunset: document.querySelector('[sunset]')
+    sunset: document.querySelector('[data-sunset]')
   };
 
   const currentTimeSpamp = data.current_weather.time;
