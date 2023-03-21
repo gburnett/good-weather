@@ -24,6 +24,7 @@ interface OpenmeteoResponse {
 
 interface WorldtimeResponse {
   datetime: string;
+  timezone: string;
 }
 
 interface ElementsSelector {
