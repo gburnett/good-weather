@@ -1,4 +1,4 @@
-interface AnyObject {
+interface GenericObject {
   [key: string]: any;
 }
 
@@ -8,7 +8,7 @@ interface Location {
 }
 
 interface NominatimResponse {
-  address: object;
+  address: GenericObject;
   display_name: string;
   place_id: number;
   lat: string;
@@ -16,9 +16,9 @@ interface NominatimResponse {
 }
 
 interface OpenmeteoResponse {
-  current_weather: AnyObject;
-  daily: AnyObject;
-  hourly: AnyObject;
+  current_weather: GenericObject;
+  daily: GenericObject;
+  hourly: GenericObject;
   timezone: string;
 }
 
