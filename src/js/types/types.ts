@@ -34,6 +34,14 @@ interface CountryList {
   [key: string]: string;
 }
 
+interface LocalStorageData {
+  city: string;
+  country: string;
+  place_id: string;
+  lat: string;
+  lon: string;
+}
+
 type DateTimeType = 'short' | 'long';
 
 export {
@@ -43,5 +51,6 @@ export {
   WorldtimeResponse,
   CountryList,
   DateTimeType,
-  ElementsSelector
+  ElementsSelector,
+  LocalStorageData
 };
