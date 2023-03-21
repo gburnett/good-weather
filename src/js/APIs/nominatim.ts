@@ -1,15 +1,10 @@
-import { NominatimResponse } from '../types/types';
+import { NominatimResponse } from 'types/types';
 
-export default async function (
-  city: string,
-  country: string
-): Promise<NominatimResponse[]> {
+export default async function (query: string): Promise<NominatimResponse[]> {
   const url: URL = new URL('https://nominatim.openstreetmap.org/search');
-  url.searchParams.set('city', city);
-  url.searchParams.set('country', country);
+  url.searchParams.set('city', query);
   url.searchParams.set('format', 'json');
   url.searchParams.set('addressdetails', '1');
-  url.searchParams.set('limit', '1');
   url.searchParams.set('accept-languag', 'en-US');
 
   try {
@@ -18,12 +13,10 @@ export default async function (
 
     if (!response.length) {
       throw new Error("Can't find this location. Please try again.");
-    } else if (!response[0].address.city) {
-      throw new Error('Please provide a city');
     }
 
     return response;
-  } catch {
-    throw new Error('Something went wrong... Please try again later.');
+  } catch (error: any) {
+    throw new Error(error.message);
   }
 }
