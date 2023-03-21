@@ -1,8 +1,8 @@
 import { OpenmeteoResponse } from '../types/types';
 
 export default async function (
-  lat: number,
-  lng: number
+  lat: string,
+  lng: string
 ): Promise<OpenmeteoResponse> {
   const url: URL = new URL('https://api.open-meteo.com/v1/forecast');
   url.searchParams.set('latitude', lat.toString());
