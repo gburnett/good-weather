@@ -4,7 +4,7 @@ interface AnyObject {
 
 interface Location {
   city: string | null;
-  country: string | null;
+  placeId: string | null;
 }
 
 interface NominatimResponse {
