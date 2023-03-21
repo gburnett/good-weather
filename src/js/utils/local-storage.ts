@@ -1,7 +1,7 @@
 import { LocalStorageData } from 'types/types';
 
 function checkLocalStorage(): boolean {
-  if (!localStorage.getItem('city') && !localStorage.getItem('place_id')) {
+  if (!localStorage.length) {
     return false;
   }
   return true;
