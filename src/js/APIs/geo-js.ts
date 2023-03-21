@@ -1,4 +1,4 @@
-export default async function getLocation(): Promise<any> {
+export default async function (): Promise<any> {
   const url: string = `https://get.geojs.io/v1/ip/geo.json`;
 
   try {
