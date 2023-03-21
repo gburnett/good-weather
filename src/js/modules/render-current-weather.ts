@@ -1,6 +1,7 @@
 import getTime from 'utils/datetime';
 import getWeatherStatus from 'utils/weather-status';
 import getWindDirection from 'utils/get-wind-direction';
+import pickIcon from 'utils/pick-icon';
 
 import { OpenmeteoResponse, ElementsSelector } from 'types/types';
 
@@ -13,11 +14,14 @@ export default function (data: OpenmeteoResponse): void {
     pressure: document.querySelector('[data-pressure]'),
     humidity: document.querySelector('[data-humidity]'),
     sunrise: document.querySelector('[data-sunrise]'),
-    sunset: document.querySelector('[data-sunset]')
+    sunset: document.querySelector('[data-sunset]'),
+    icon: document.querySelector('[data-weather-icon-sprite]')
   };
 
   const currentTimeSpamp = data.current_weather.time;
   const currentTimeStampIndex = data.hourly.time.indexOf(currentTimeSpamp);
+
+  const baseIconPath = '/src/assets/icons/sprite.svg#icon';
 
   const weatherData = {
     weatherStatus: getWeatherStatus(data.current_weather.weathercode),
@@ -39,4 +43,10 @@ export default function (data: OpenmeteoResponse): void {
   ELEMENTS.humidity!.textContent = `${weatherData.humidity}%`;
   ELEMENTS.sunrise!.textContent = `${weatherData.sunrise}`;
   ELEMENTS.sunset!.textContent = `${weatherData.sunset}`;
+
+  ELEMENTS.icon!.setAttributeNS(
+    'http://www.w3.org/1999/xlink',
+    'xlink:href',
+    `${baseIconPath}-${pickIcon(weatherData.weatherStatus)}`
+  );
 }
