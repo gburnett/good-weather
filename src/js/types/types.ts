@@ -10,6 +10,7 @@ interface Location {
 interface NominatimResponse {
   address: object;
   display_name: string;
+  place_id: number;
   lat: string;
   lon: string;
 }
