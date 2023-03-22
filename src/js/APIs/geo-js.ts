@@ -1,6 +1,6 @@
 import { GeoJSResponse } from 'types/types';
 
-export default async function (): Promise<GeoJSResponse | null> {
+export default async function (): Promise<GeoJSResponse> {
   const url: string = `https://get.geojs.io/v1/ip/geo.json`;
 
   try {
@@ -11,6 +11,7 @@ export default async function (): Promise<GeoJSResponse | null> {
     if (error instanceof Error) {
       throw new Error(error.message);
     }
-    return null;
+    throw error;
+    // return null;
   }
 }
