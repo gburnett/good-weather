@@ -1,4 +1,5 @@
 import { checkLocalStorage, getSavedLocation } from 'utils/local-storage';
+import showAlert from 'utils/show-alert';
 
 import getLocation from '../APIs/geo-js';
 import openmeteo from '../APIs/openmeteo';
@@ -34,7 +35,7 @@ export default function (): void {
           renderCurrentDatetime(data.datetime, data.timezone);
         })
         .catch((error) => {
-          console.log(error);
+          showAlert(error.message);
         });
     } else {
       getLocation()
@@ -57,7 +58,7 @@ export default function (): void {
           renderCurrentDatetime(timeData.datetime, timeData.timezone);
         })
         .catch((error) => {
-          console.log(error);
+          showAlert(error.message);
         });
     }
   });
