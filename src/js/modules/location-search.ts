@@ -3,6 +3,7 @@ import debounce from 'lodash.debounce';
 import { LocalStorageData } from 'types/types';
 
 import clearHTML from 'utils/clear-html';
+import showAlert from 'utils/show-alert';
 import { saveLocation } from 'utils/local-storage';
 import openmeteo from '../APIs/openmeteo';
 import worldtime from '../APIs/worldtime';
@@ -112,8 +113,7 @@ export default function (): void {
         renderCurrentDatetime(data.datetime, data.timezone);
       })
       .catch((error) => {
-        // TODO Show error message
-        console.log(error);
+        showAlert(error.message);
       });
   });
 
