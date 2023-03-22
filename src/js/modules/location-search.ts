@@ -86,6 +86,12 @@ export default function (): void {
     const target = e.target as HTMLElement;
     if (!target.classList.contains('searchbar__results-item')) return;
 
+    // Close search menu when location is chosen
+    if (searchResultsParent) {
+      clearHTML(searchResultsList);
+      searchResultsParent.style.display = 'none';
+    }
+
     const location: LocalStorageData = {
       city: target.getAttribute('data-place-name')!,
       country: target.getAttribute('data-place-country')!,
