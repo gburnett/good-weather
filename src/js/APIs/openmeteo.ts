@@ -1,4 +1,4 @@
-import { OpenmeteoResponse } from '../types/types';
+import { OpenmeteoResponse } from 'types/types';
 
 export default async function (
   lat: string,
@@ -16,16 +16,16 @@ export default async function (
   url.searchParams.set('timezone', 'auto');
 
   try {
-    const request = await fetch(url);
+    const request: Response = await fetch(url);
 
-    const response = await request.json();
-
-    if (response.error) {
-      throw new Error('Can\t load the weather at the moment. Try again later');
-    }
+    const response: OpenmeteoResponse = await request.json();
 
     return response;
-  } catch {
-    throw new Error('Something went wrong... Please try again later.');
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error('Something went wrong... Please try again later.');
+    }
+
+    throw error;
   }
 }
