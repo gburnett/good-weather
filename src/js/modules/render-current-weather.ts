@@ -26,7 +26,7 @@ export default function (data: OpenmeteoResponse): void {
   const currentTimeStampIndex: number =
     data.hourly.time.indexOf(currentTimeSpamp);
 
-  const baseIconPath: string = '/src/assets/icons/sprite.svg#icon';
+  const baseIconPath: string = 'sprite.svg#icon';
 
   const weatherData: GenericObject = {
     weatherStatus: getWeatherStatus(data.current_weather.weathercode),
