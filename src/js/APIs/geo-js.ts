@@ -1,13 +1,16 @@
-export default async function (): Promise<any> {
+import { GeoJSResponse } from 'types/types';
+
+export default async function (): Promise<GeoJSResponse | null> {
   const url: string = `https://get.geojs.io/v1/ip/geo.json`;
 
   try {
     const request = await fetch(url);
-    const response = await request.json();
+    const response: GeoJSResponse = await request.json();
     return response;
-  } catch {
-    throw new Error(
-      "Can't detect your location. Please choose the desired location manually."
-    );
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
+    return null;
   }
 }
