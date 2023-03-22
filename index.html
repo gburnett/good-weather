@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App 2</title>
+  <title>GoodWeather</title>
 </head>
 
 <body class="page main-page">
@@ -15,10 +15,13 @@
       <div class="header__logo">
         <p class="header__logo-caption">GoodWeather</p>
       </div>
-      <form class="header__search searchbar">
+      <form class="header__search searchbar" data-search>
         <label class="searchbar__label">
-          <input type="text" class="searchbar__input" placeholder="Enter a city ...">
+          <input type="text" class="searchbar__input" placeholder="Enter a city ..." data-search-input>
         </label>
+        <div class="searchbar__results" data-search-results>
+          <ul class="searchbar__results-list" data-search-results-list></ul>
+        </div>
       </form>
     </div>
   </header>
@@ -30,12 +33,8 @@
         <div class="weather-card__wrapper">
           <div class="weather-card__header">
             <div class="weather-card__header-wrapper">
-              <p class="weather-card__date">
-                13.02.12
-              </p>
-              <p class="weather-card__location">
-                Moscow, Russia
-              </p>
+              <p class="weather-card__date"></p>
+              <p class="weather-card__location"></p>
             </div>
           </div>
           <div class="weather-card__current">
@@ -44,16 +43,12 @@
                 <div class="weather-card__current-status-wrapper">
                   <div class="weather-card__current-status-icon">
                     <svg class="weather-card__current-status-icon-svg">
-                      <use xlink:href="./src/assets/icons/sprite.svg#icon-snow"></use>
+                      <use xlink:href="./src/assets/icons/sprite.svg#icon-snow" data-weather-icon-sprite></use>
                     </svg>
                   </div>
                   <div class="weather-card__current-status-data">
-                    <div class="weather-card__current-status-temperature" data-current-temperature>
-                      20
-                    </div>
-                    <div class="weahter-card__current-status-caption" data-current-weather>
-                      Mostly cloudy
-                    </div>
+                    <div class="weather-card__current-status-temperature" data-current-temperature></div>
+                    <div class="weahter-card__current-status-caption" data-current-weather></div>
                   </div>
                 </div>
               </div>
@@ -61,32 +56,32 @@
               <div class="weather-card__row">
                 <div class="weather-card__col">
                   <span class="weather-card__col-title">Real Feel</span>
-                  <span data-real-feel>10</span>
+                  <span data-real-feel></span>
                 </div>
                 <div class="weather-card__col">
                   <span class="weather-card__col-title">Wind</span>
-                  <span data-wind>10 N/NW</span>
+                  <span data-wind></span>
                 </div>
               </div>
               <div class="weather-card__row">
                 <div class="weather-card__col">
                   <span class="weather-card__col-title">Pressure</span>
-                  <span data-pressure>1000 hPa</span>
+                  <span data-pressure></span>
                 </div>
                 <div class="weather-card__col">
                   <span class="weather-card__col-title">Humidity</span>
-                  <span data-humidity>90%</span>
+                  <span data-humidity></span>
                 </div>
               </div>
             </div>
             <div class="weather-card__row">
               <div class="weather-card__col">
                 <span class="weather-card__col-title">Sunsire</span>
-                <span data-sunrise>06:30</span>
+                <span data-sunrise></span>
               </div>
               <div class="weather-card__col" data-pressure>
                 <span class="weather-card__col-title">Sunset</span>
-                <span data-sunset>18:30</span>
+                <span data-sunset></span>
               </div>
             </div>
             <div class="weather-card__forecast" data-forecast>
@@ -105,23 +100,8 @@
                           Weather
                         </th>
                       </tr>
-                      <tr class="weather-card__forecast-table-row">
-                        <td class="weather-card__forecast-table-col">5:00</td>
-                        <td class="weather-card__forecast-table-col">10deg</td>
-                        <td class="weather-card__forecast-table-col">Cloudy</td>
-                      </tr>
-                      <tr class="weather-card__forecast-table-row">
-                        <td class="weather-card__forecast-table-col">5:00</td>
-                        <td class="weather-card__forecast-table-col">10deg</td>
-                        <td class="weather-card__forecast-table-col">Cloudy</td>
-                      </tr>
-                      <tr class="weather-card__forecast-table-row">
-                        <td class="weather-card__forecast-table-col">5:00</td>
-                        <td class="weather-card__forecast-table-col">10deg</td>
-                        <td class="weather-card__forecast-table-col">Cloudy</td>
-                      </tr>
                     </thead>
-                    <tbody class="forecast__table-body"></tbody>
+                    <tbody class="forecast__table-body" data-forecast-table-body></tbody>
                   </table>
                 </div>
               </div>
