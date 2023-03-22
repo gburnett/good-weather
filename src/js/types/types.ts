@@ -27,6 +27,13 @@ interface WorldtimeResponse {
   timezone: string;
 }
 
+interface GeoJSResponse {
+  city: string;
+  country: string;
+  latitude: string;
+  longitude: string;
+}
+
 interface ElementsSelector {
   [key: string]: HTMLElement | null;
 }
@@ -52,5 +59,6 @@ export {
   CountryList,
   DateTimeType,
   ElementsSelector,
-  LocalStorageData
+  LocalStorageData,
+  GeoJSResponse
 };
