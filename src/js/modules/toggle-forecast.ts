@@ -15,8 +15,8 @@ export default function (): void {
   ELEMENTS.forecastHeader?.addEventListener('click', () => {
     ELEMENTS.forecastParent?.classList.toggle(activeClass);
 
-    if (ELEMENTS.forecastBody!.style.maxHeight) {
-      ELEMENTS.forecastBody!.style.maxHeight = null;
+    if (ELEMENTS.forecastBody?.style.maxHeight) {
+      ELEMENTS.forecastBody!.style.maxHeight = '';
       ELEMENTS.forecastCaption!.textContent = defaultCaption;
     } else {
       ELEMENTS.forecastBody!.style.maxHeight = `${
