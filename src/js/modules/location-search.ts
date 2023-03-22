@@ -36,10 +36,6 @@ export default function (): void {
     if (query) {
       nominatim(query)
         .then((data) => {
-          if (data === null) {
-            throw new Error('Something went wrong...');
-          }
-
           clearHTML(searchResultsList);
           searchResultsParent!.style.display = 'block';
 
@@ -71,8 +67,6 @@ export default function (): void {
           message.className = 'searchbar__results-message';
           message.textContent = error.message;
           searchResultsList?.appendChild(message);
-
-          console.log(error);
         });
 
       // Abort search if query is empty
