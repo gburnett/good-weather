@@ -39,12 +39,6 @@ export default function (): void {
     } else {
       getLocation()
         .then((location) => {
-          if (location === null) {
-            throw new Error(
-              "Can't detect your current location. Please try again later"
-            );
-          }
-
           renderLocation(location.city, location.country);
           return openmeteo(location.latitude, location.longitude);
         })
