@@ -5,5 +5,7 @@ export default function (time: string, timezone: string): void {
     '.weather-card__date'
   );
 
-  element!.textContent = getDateTime('long', time, timezone);
+  if (element) {
+    element.textContent = getDateTime('long', time, timezone);
+  }
 }
