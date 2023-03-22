@@ -108,14 +108,20 @@
       font-weight: $font-weight-bold;
 
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: rem(5px);
 
       margin-top: rem($gap-20);
-      padding-block: rem($gap-10);
+      
+      &-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(5px);
 
-      cursor: pointer;
+        padding-block: rem($gap-10);
+
+        cursor: pointer;
+      }
 
       &-icon {
         $icon-size: 20px;
