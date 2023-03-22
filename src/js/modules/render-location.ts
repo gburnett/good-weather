@@ -3,5 +3,7 @@ export default function (city: string, country: string): void {
     '.weather-card__location'
   );
 
-  element!.textContent = `${city}, ${country}`;
+  if (element) {
+    element.textContent = `${city}, ${country}`;
+  }
 }
