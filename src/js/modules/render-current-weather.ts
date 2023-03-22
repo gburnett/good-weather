@@ -3,7 +3,11 @@ import getWeatherStatus from 'utils/weather-status';
 import getWindDirection from 'utils/get-wind-direction';
 import pickIcon from 'utils/pick-icon';
 
-import { OpenmeteoResponse, ElementsSelector } from 'types/types';
+import {
+  OpenmeteoResponse,
+  ElementsSelector,
+  GenericObject
+} from 'types/types';
 
 export default function (data: OpenmeteoResponse): void {
   const ELEMENTS: ElementsSelector = {
@@ -18,12 +22,13 @@ export default function (data: OpenmeteoResponse): void {
     icon: document.querySelector('[data-weather-icon-sprite]')
   };
 
-  const currentTimeSpamp = data.current_weather.time;
-  const currentTimeStampIndex = data.hourly.time.indexOf(currentTimeSpamp);
+  const currentTimeSpamp: string = data.current_weather.time;
+  const currentTimeStampIndex: number =
+    data.hourly.time.indexOf(currentTimeSpamp);
 
-  const baseIconPath = '/src/assets/icons/sprite.svg#icon';
+  const baseIconPath: string = '/src/assets/icons/sprite.svg#icon';
 
-  const weatherData = {
+  const weatherData: GenericObject = {
     weatherStatus: getWeatherStatus(data.current_weather.weathercode),
     temperature: data?.hourly.temperature_2m[currentTimeStampIndex],
     realFeel: data.hourly.apparent_temperature[currentTimeStampIndex],
