@@ -1,4 +1,4 @@
-import { DateTimeType } from '../types/types';
+import { DateTimeType } from 'types/types';
 
 export default function (
   type: DateTimeType,
