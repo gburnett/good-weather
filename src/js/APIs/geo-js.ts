@@ -9,9 +9,10 @@ export default async function (): Promise<GeoJSResponse> {
     return response;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      throw new Error(error.message);
+      throw new Error(
+        `Cannot get your IP address: ${error.message}. Please select location manually.`
+      );
     }
     throw error;
-    // return null;
   }
 }
