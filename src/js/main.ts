@@ -1,8 +1,12 @@
 import 'normalize.css';
 import '@/scss/style.scss';
 
-import showForecast from './modules/show-forecast';
+import showForecast from './modules/toggle-forecast';
+import search from './modules/location-search';
+import loadContent from './modules/load-content';
 
 (() => {
   showForecast();
+  loadContent();
+  search();
 })();
