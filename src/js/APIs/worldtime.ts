@@ -6,10 +6,11 @@ export default async function (timezone: string): Promise<WorldtimeResponse> {
   try {
     const request: Response = await fetch(url);
     const response: WorldtimeResponse = await request.json();
+
     return response;
   } catch (error) {
     if (error instanceof Error) {
-      throw new Error(error.message);
+      throw new Error(`Cannot get current datetime: ${error.message}`);
     }
 
     throw error;
