@@ -36,6 +36,10 @@ export default function (): void {
     if (query) {
       nominatim(query)
         .then((data) => {
+          if (data === null) {
+            throw new Error('Something went wrong...');
+          }
+
           clearHTML(searchResultsList);
           searchResultsParent!.style.display = 'block';
 
@@ -65,7 +69,7 @@ export default function (): void {
 
           const message = document.createElement('li') as HTMLLIElement;
           message.className = 'searchbar__results-message';
-          message.textContent = 'Nothing found ...';
+          message.textContent = error.message;
           searchResultsList?.appendChild(message);
 
           console.log(error);
