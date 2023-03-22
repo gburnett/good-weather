@@ -7,7 +7,7 @@ export default async function (
   url.searchParams.set('city', query);
   url.searchParams.set('format', 'json');
   url.searchParams.set('addressdetails', '1');
-  url.searchParams.set('accept-languag', 'en-US');
+  url.searchParams.set('accept-language', 'en-US');
 
   try {
     const request: Response = await fetch(url);
