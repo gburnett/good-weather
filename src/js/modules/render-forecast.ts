@@ -7,7 +7,7 @@ export default function (data: OpenmeteoResponse): void {
   const currentHour: string = data.current_weather.time;
   const forecastPoints: number = 8;
 
-  const tableBody: Element | null = document.querySelector(
+  const tableBody: HTMLElement | null = document.querySelector(
     '[data-forecast-table-body]'
   );
 
@@ -29,7 +29,7 @@ export default function (data: OpenmeteoResponse): void {
   for (let i = 0; i < forecastPoints; i++) {
     step += 2;
 
-    const newTableRow = document.createElement('tr');
+    const newTableRow = document.createElement('tr') as HTMLTableRowElement;
     newTableRow.className = 'weather-card__forecast-table-row';
     newTableRow.innerHTML = `
       <td class="weather-card__forecast-table-col">
