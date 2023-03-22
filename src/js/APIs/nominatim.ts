@@ -14,7 +14,7 @@ export default async function (
     const response: NominatimResponse[] = await request.json();
 
     if (!response.length) {
-      throw new Error("Can't find this location. Please try again.");
+      throw new Error('Nothing found ...');
     }
 
     return response;
