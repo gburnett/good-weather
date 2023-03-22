@@ -1,8 +1,6 @@
 import { NominatimResponse } from 'types/types';
 
-export default async function (
-  query: string
-): Promise<NominatimResponse[] | null> {
+export default async function (query: string): Promise<NominatimResponse[]> {
   const url: URL = new URL('https://nominatim.openstreetmap.org/search');
   url.searchParams.set('city', query);
   url.searchParams.set('format', 'json');
@@ -23,6 +21,6 @@ export default async function (
       throw new Error(error.message);
     }
 
-    return null;
+    throw error;
   }
 }
