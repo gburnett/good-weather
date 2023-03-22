@@ -52,6 +52,7 @@ interface LocalStorageData {
 type DateTimeType = 'short' | 'long';
 
 export {
+  GenericObject,
   Location,
   NominatimResponse,
   OpenmeteoResponse,
