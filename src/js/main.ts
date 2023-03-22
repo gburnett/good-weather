@@ -1,4 +1,5 @@
 import 'normalize.css';
+import 'toastify-js/src/toastify.css';
 import '@/scss/style.scss';
 
 import showForecast from './modules/toggle-forecast';
